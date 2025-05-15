@@ -1,8 +1,23 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
+
 import { Button } from "@/components/ui/button";
-import { ChevronDown, ChevronUp, Menu, Home, Coffee, Building, Image, Book, Info, Factory, Phone, ShoppingBag, Utensils } from "lucide-react";
+import {
+  ChevronDown,
+  ChevronUp,
+  Menu,
+  Home,
+  Coffee,
+  Building,
+  Book,
+  Info,
+  Factory,
+  Phone,
+  ShoppingBag,
+  Utensils,
+} from "lucide-react";
 import {
   HoverCard,
   HoverCardContent,
@@ -17,20 +32,75 @@ import {
 } from "../ui/sheet";
 import React, { useState } from "react";
 import { useGetCategoryQuery } from "@/lib/features/api/categoryApi";
-import  {ThemeToggle}  from "../Theme/ThemeToggle";
+import { ThemeToggle } from "../Theme/ThemeToggle";
 
 export const NavbarLinks = [
-  { title: "Home", link: "/", dropDown: false, icon: <Home className="w-4 h-4 mr-1" /> },
-  { title: "Service", link: "/services", dropDown: false, icon: <ShoppingBag className="w-4 h-4 mr-1" /> },
-  { title: "Products", link: "/products", dropDown: false, icon: <ShoppingBag className="w-4 h-4 mr-1" /> },
-  { title: "Coffee", link: "#coffee", dropDown: true, icon: <Coffee className="w-4 h-4 mr-1" /> },
-  { title: "Cafeteria", link: "/birra-cafeteria", dropDown: false, icon: <Utensils className="w-4 h-4 mr-1" /> },
-  { title: "Apartment", link: "/apartment", dropDown: false, icon: <Building className="w-4 h-4 mr-1" /> },
-  { title: "Gallery", link: "/gallery", dropDown: false, icon: <Image className="w-4 h-4 mr-1" /> },
-  { title: "Blog", link: "/blogs", dropDown: false, icon: <Book className="w-4 h-4 mr-1" /> },
-  { title: "About Us", link: "/about", dropDown: false, icon: <Info className="w-4 h-4 mr-1" /> },
-  { title: "Factories", link: "/factories", dropDown: false, icon: <Factory className="w-4 h-4 mr-1" /> },
-  { title: "Contact Us", link: "/contact-us", dropDown: false, icon: <Phone className="w-4 h-4 mr-1" /> },
+  {
+    title: "Home",
+    link: "/",
+    dropDown: false,
+    icon: <Home className="w-4 h-4 mr-1" />,
+  },
+  {
+    title: "Service",
+    link: "/services",
+    dropDown: false,
+    icon: <ShoppingBag className="w-4 h-4 mr-1" />,
+  },
+  {
+    title: "Products",
+    link: "/products",
+    dropDown: false,
+    icon: <ShoppingBag className="w-4 h-4 mr-1" />,
+  },
+  {
+    title: "Coffee",
+    link: "#coffee",
+    dropDown: true,
+    icon: <Coffee className="w-4 h-4 mr-1" />,
+  },
+  {
+    title: "Cafeteria",
+    link: "/birra-cafeteria",
+    dropDown: false,
+    icon: <Utensils className="w-4 h-4 mr-1" />,
+  },
+  {
+    title: "Apartment",
+    link: "/apartment",
+    dropDown: false,
+    icon: <Building className="w-4 h-4 mr-1" />,
+  },
+  {
+    title: "Gallery",
+    link: "/gallery",
+    dropDown: false,
+    icon: <Image className="w-4 h-4 mr-1" />,
+  },
+  {
+    title: "Blog",
+    link: "/blogs",
+    dropDown: false,
+    icon: <Book className="w-4 h-4 mr-1" />,
+  },
+  {
+    title: "About Us",
+    link: "/about",
+    dropDown: false,
+    icon: <Info className="w-4 h-4 mr-1" />,
+  },
+  {
+    title: "Factories",
+    link: "/factories",
+    dropDown: false,
+    icon: <Factory className="w-4 h-4 mr-1" />,
+  },
+  {
+    title: "Contact Us",
+    link: "/contact-us",
+    dropDown: false,
+    icon: <Phone className="w-4 h-4 mr-1" />,
+  },
 ];
 
 export default function Navbar() {
@@ -55,8 +125,17 @@ export default function Navbar() {
         <div className="flex justify-between items-center h-16">
           <div className="flex items-center">
             <div className="flex-shrink-0 flex items-center">
-              <Link href="/" className="text-2xl font-extrabold text-text-primary dark:text-text-light tracking-tight">
-                Birra Group
+              <Link
+                href="/"
+                className="text-2xl font-extrabold text-text-primary dark:text-text-light tracking-tight"
+              >
+                <Image
+                  src="/birra-group-4.jpg"
+                  alt="Birra Group Logo"
+                  width={90}
+                  height={100}
+                  className="rounded-full shadow-md mr-2 mt-8"
+                />
               </Link>
             </div>
             <div className="hidden sm:ml-6 lg:flex sm:space-x-2">
@@ -82,7 +161,11 @@ export default function Navbar() {
                               key={category.id}
                               href={`/products/category/${category.id}`}
                               className="flex items-center px-3 py-2 text-xs text-text-secondary dark:text-text-neutral hover:bg-bg-accent1 dark:hover:bg-bg-accent1 hover:text-text-primary dark:hover:text-text-light rounded-md transition-all duration-300"
-                              onClick={() => handleLinkClick(`/products/category/${category.id}`)}
+                              onClick={() =>
+                                handleLinkClick(
+                                  `/products/category/${category.id}`
+                                )
+                              }
                             >
                               <Coffee className="w-4 h-4 mr-1" />
                               {category.name}
@@ -119,7 +202,10 @@ export default function Navbar() {
                 <SheetTrigger asChild>
                   <Menu className="cursor-pointer h-6 w-6 text-text-primary dark:text-text-light" />
                 </SheetTrigger>
-                <SheetContent side="left" className="bg-bg-primary dark:bg-bg-light text-text-primary dark:text-text-light">
+                <SheetContent
+                  side="left"
+                  className="bg-bg-primary dark:bg-bg-light text-text-primary dark:text-text-light"
+                >
                   <SheetHeader>
                     <SheetTitle className="text-lg font-bold text-text-primary dark:text-text-light">
                       Birra Group
@@ -138,7 +224,11 @@ export default function Navbar() {
                                 {link.icon}
                                 {link.title}
                               </div>
-                              {activeDropDown === index ? <ChevronUp /> : <ChevronDown />}
+                              {activeDropDown === index ? (
+                                <ChevronUp />
+                              ) : (
+                                <ChevronDown />
+                              )}
                             </div>
                             {activeDropDown === index && (
                               <div className="pl-6 space-y-2 divide-y divide-bg-accent1 dark:divide-bg-accent2">
@@ -146,7 +236,11 @@ export default function Navbar() {
                                   <Link
                                     key={category.id}
                                     href={`/products/category/${category.id}`}
-                                    onClick={() => handleLinkClick(`/products/category/${category.id}`)}
+                                    onClick={() =>
+                                      handleLinkClick(
+                                        `/products/category/${category.id}`
+                                      )
+                                    }
                                     className="block text-xs text-text-secondary dark:text-text-neutral hover:text-text-primary dark:hover:text-text-light pt-2"
                                   >
                                     <div className="flex items-center">

@@ -1,5 +1,5 @@
 import StoreProvider from "@/app/StoreProvider";
-import ServiceDetail from "@/components/Services/ServiceDetailsCard";
+import ServiceDetail from "@/components/Services/ServiceDetail";
 import React from "react";
 
 export default async function page({

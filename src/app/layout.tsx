@@ -7,6 +7,7 @@ import { SidebarProvider } from "@/components/ui/sidebar";
 import AppSidebar from "@/components/AppSidebar/AppSidebar";
 import StoreProvider from "./StoreProvider";
 import { Toaster } from "@/components/ui/toaster";
+import { ThemeProvider } from "@/components/Theme/ThemeProvider";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -45,7 +46,7 @@ export const metadata: Metadata = {
     "Arabica coffee Ethiopia",
     "Ethiopian coffee business trends",
     "Birra Group coffee exports",
-    "Ethiopian coffee market updates",
+    "Ethopian coffee market updates",
     "coffee supply chain Ethiopia",
 
     // Real Estate Keywords
@@ -125,19 +126,21 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased flex flex-col bg-prima bg-gray-100 overflow-x-hidden max-w-screen`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased flex flex-col bg-bg-light dark:bg-bg-primary overflow-x-hidden max-w-screen`}
       >
-        <Toaster />
-        <SidebarProvider className="flex flex-col" open={false}>
-          <div className="sm:hidden">
-            <AppSidebar />
-          </div>
-          <StoreProvider>
-            <Navbar />
-          </StoreProvider>
-          <div className="grow relative">{children}</div>
-          <Footer />
-        </SidebarProvider>
+        <ThemeProvider>
+          <Toaster />
+          <SidebarProvider className="flex flex-col" open={false}>
+            <div className="sm  sm:hidden">
+              <AppSidebar />
+            </div>
+            <StoreProvider>
+              <Navbar />
+            </StoreProvider>
+            <div className="grow relative">{children}</div>
+            <Footer />
+          </SidebarProvider>
+        </ThemeProvider>
       </body>
     </html>
   );

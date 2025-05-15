@@ -32,7 +32,7 @@ export default function Service({ service }: { service: ServiceType }) {
           </div>
         </CardHeader>
         <CardContent className="flex-grow">
-          <p className="text-gray-600 text-sm">{service.description}</p>
+          <p className="text-gray-600 text-sm dark:text-white">{service.description}</p>
           {/* <div className="flex items-center mt-4 text-sm text-gray-500">
             <Clock className="w-4 h-4 mr-2" />
             <span>{service.time}</span>

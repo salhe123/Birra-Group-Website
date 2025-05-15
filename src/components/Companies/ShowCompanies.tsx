@@ -60,9 +60,9 @@ export default function ShowCompanies({ logos }: { logos: Partner[] }) {
   };
 
   return (
-    <section className="py-16 px-4 md:px-6 lg:px-8 bg-gray-50">
+    <section className="py-16 px-4 md:px-6 lg:px-8 dark:bg-[#3b2413] ">
       <div className="max-w-7xl mx-auto">
-        <h2 className="text-2xl font-extrabold my-8 text-gray-700 mb-8 text-center">
+        <h2 className="text-2xl font-extrabold my-8 text-black dark:text-white mb-8 text-center">
           Certification And Awards
         </h2>
         <div className="relative overflow-hidden">
@@ -95,7 +95,7 @@ export default function ShowCompanies({ logos }: { logos: Partner[] }) {
           <Button
             variant="outline"
             size="icon"
-            className="absolute top-1/2 left-2 transform -translate-y-1/2 bg-white/80 hover:bg-white"
+            className="absolute top-1/2 left-2 transform -translate-y-1/2 dark:bg-slate-100 bg-white/80 hover:bg-white"
             onClick={prevSlide}
             aria-label="Previous slide"
           >
@@ -104,7 +104,7 @@ export default function ShowCompanies({ logos }: { logos: Partner[] }) {
           <Button
             variant="outline"
             size="icon"
-            className="absolute top-1/2 right-2 transform -translate-y-1/2 bg-white/80 hover:bg-white"
+            className="absolute top-1/2 right-2 dark:bg-slate-100 transform -translate-y-1/2 bg-white/80 hover:bg-white"
             onClick={nextSlide}
             aria-label="Next slide"
           >

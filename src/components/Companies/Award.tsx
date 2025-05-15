@@ -13,21 +13,23 @@ import Image from "next/image";
 
 export function Award({ partner }: { partner: Partner }) {
   if (!partner || !partner.logoUrl || !partner.name) {
-    return null; // Return null if required partner data is missing
+    return null;
   }
 
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <div className="w-full md:w-auto flex flex-col justify-center items-center cursor-pointer">
-          <Image
-            src={partner.logoUrl}
-            alt={partner.name}
-            width={200}
-            height={150}
-            className="max-w-[200px] h-auto object-contain rounded-lg"
-          />
-          <p className="mt-2 text-base font-semibold text-center">
+        <div className="w-[220px] h-[260px] bg-white shadow-md rounded-xl flex flex-col justify-between items-center p-4 transition-transform hover:scale-105 cursor-pointer">
+          <div className="w-full h-[140px] flex items-center justify-center">
+            <Image
+              src={partner.logoUrl}
+              alt={partner.name}
+              width={180}
+              height={120}
+              className="object-contain max-h-full"
+            />
+          </div>
+          <p className="mt-4 text-base font-semibold text-center text-gray-800 line-clamp-2">
             {partner.name}
           </p>
         </div>
@@ -41,7 +43,7 @@ export function Award({ partner }: { partner: Partner }) {
           </DialogDescription>
         </DialogHeader>
 
-        <div className="grid gap-4 py-4 relative w-full h-[300px] md:h-[45vh]">
+        <div className="relative w-full h-[300px] md:h-[45vh]">
           <Image
             src={partner.logoUrl}
             alt={partner.name}
@@ -51,7 +53,7 @@ export function Award({ partner }: { partner: Partner }) {
         </div>
 
         <DialogFooter>
-          {/* You can add buttons or actions here if needed */}
+          {/* Optional action buttons */}
         </DialogFooter>
       </DialogContent>
     </Dialog>

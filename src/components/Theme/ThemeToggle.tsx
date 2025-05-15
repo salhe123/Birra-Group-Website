@@ -14,6 +14,7 @@ export function ThemeToggle() {
       onClick={toggleTheme}
       className="text-text-secondary dark:text-text-neutral hover:bg-bg-secondary dark:hover:bg-bg-accent1 hover:text-text-primary dark:hover:text-text-light rounded-full transition-all duration-300"
       aria-label="Toggle theme"
+      title="Toggle theme"
     >
       {theme === "dark" ? (
         <Sun className="h-5 w-5 transform rotate-0 transition-transform duration-500" />

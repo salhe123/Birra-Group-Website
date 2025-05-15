@@ -32,7 +32,7 @@ export default function HeroImage() {
   };
 
   return (
-    <div className="relative h-[35vh] sm:h-[60vh] md:h-[80vh] w-full overflow-hidden  p-10 px-20 py-10">
+    <div className="relative h-[35vh] sm:h-[60vh] md:h-[80vh] w-full overflow-hidden  p-10 px-20 py-10 mt-16">
       <div className="absolute inset-0 flex items-center justify-center px-16">
         {slides.map((slide, index) => {
           let offset = index - currentSlide;

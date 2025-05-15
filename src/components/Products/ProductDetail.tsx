@@ -22,7 +22,7 @@ export default function ProductDetail({ productId }: { productId: string }) {
   if (error) return notFound();
 
   return (
-    <Card className="w-full max-w-7xl mx-auto my-14 text-black bg-gray-100">
+    <Card className="w-full max-w-7xl mx-auto my-14 text-black dark:bg-[#3b2413] ">
       <CardHeader>
         <div className="flex flex-col md:flex-row gap-6">
           <div className="w-full md:w-1/2 relative aspect-square rounded-lg overflow-hidden">

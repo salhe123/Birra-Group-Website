@@ -19,10 +19,10 @@ export default function ProductsShowcase() {
 
   return (
     <div className="">
-      <h2 className="text-3xl font-extrabold my-8 text-text-muted mb-8 text-center ">
+      <h2 className="text-3xl dark:text-white font-extrabold my-8 text-text-muted mb-8 text-center ">
         Our Products
       </h2>
-      <h2 className="my-10 text-sm text-text-accent font-medium text-center text-balance max-w-xl mx-auto">
+      <h2 className="my-10 dark:text-white text-sm text-text-accent font-medium text-center text-balance max-w-xl mx-auto">
         Birra Coffee Export, based in Ethiopia, specializes in exporting
         high-quality Ethiopian coffee beans, pulses, and oilseeds sourced from
         diverse regions across the country.
@@ -34,7 +34,7 @@ export default function ProductsShowcase() {
       </div>
       <div className="flex justify-center my-10">
         <Link href="/products">
-          <button className="bg-[#442817] text-white px-8 py-3 rounded hover:bg-[#5d371f] transition-colors">
+          <button className="bg-[#442817] dark:bg-white dark:text-text-muted font-bold text-white px-8 py-3 rounded hover:bg-[#5d371f] transition-colors">
             More Products
           </button>
         </Link>

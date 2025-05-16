@@ -8,6 +8,7 @@ import AppSidebar from "@/components/AppSidebar/AppSidebar";
 import StoreProvider from "./StoreProvider";
 import { Toaster } from "@/components/ui/toaster";
 import { ThemeProvider } from "@/components/Theme/ThemeProvider";
+import CookieConsent from "@/components/CookieConsent";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -138,6 +139,7 @@ export default function RootLayout({
               <Navbar />
             </StoreProvider>
             <div className="grow relative">{children}</div>
+            <CookieConsent />
             <Footer />
           </SidebarProvider>
         </ThemeProvider>

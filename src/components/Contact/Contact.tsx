@@ -90,7 +90,7 @@ export default function Contact() {
   }
 
   return (
-    <section className="py-16 px-4 bg-white text-light_primary">
+    <section className="py-16 px-4 bg-white dark:text-white dark:bg-[#3b2413] text-light_primary">
       <div className="max-w-5xl mx-auto">
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold mb-2">Contact Us</h2>
@@ -100,7 +100,7 @@ export default function Contact() {
         </div>
 
         <div className="grid md:grid-cols-[1fr,2fr] gap-12">
-          <div className="space-y-8">
+          <div className="space-y-8 dark:text-white">
             {contactInfo.map((info, index) => {
               const Icon = info.icon;
               return (
@@ -121,7 +121,7 @@ export default function Contact() {
             })}
           </div>
 
-          <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
+          <form onSubmit={handleSubmit(onSubmit)} className="space-y-6 dark:text-white">
             <div className="grid md:grid-cols-2 gap-4">
               <div className="space-y-2">
                 <Label className="font-semibold" htmlFor="name">

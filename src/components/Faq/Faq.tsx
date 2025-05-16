@@ -18,7 +18,7 @@ export default function FAQ() {
   const faqs = data?.faqs || [];
 
   return (
-    <section className="py-16 px-4 md:px-6 lg:px-8 bg-gray-50">
+    <section className="py-16 px-4 md:px-6 lg:px-8 bg-gray-50 dark:bg-[#3b2413]">
       <div className="max-w-3xl mx-auto">
         <h2 className="text-2xl font-bold mb-8">
           Frequently asked questions about Ethiopian coffee exporters

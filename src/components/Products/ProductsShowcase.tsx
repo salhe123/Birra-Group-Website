@@ -18,7 +18,7 @@ export default function ProductsShowcase() {
   }
 
   return (
-    <div className="">
+    <div>
       <h2 className="text-3xl dark:text-white font-extrabold my-8 text-text-muted mb-8 text-center ">
         Our Products
       </h2>

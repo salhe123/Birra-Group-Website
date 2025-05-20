@@ -2,7 +2,6 @@
 
 import Link from "next/link";
 import Image from "next/image";
-
 import { Button } from "@/components/ui/button";
 import {
   ChevronDown,
@@ -17,6 +16,7 @@ import {
   Phone,
   ShoppingBag,
   Utensils,
+  Images,
 } from "lucide-react";
 import {
   HoverCard,
@@ -75,7 +75,7 @@ export const NavbarLinks = [
     title: "Gallery",
     link: "/gallery",
     dropDown: false,
-    icon: <Image className="w-4 h-4 mr-1" />,
+    icon: <Images className="w-4 h-4 mr-1" />,
   },
   {
     title: "Blog",
@@ -110,17 +110,17 @@ export default function Navbar() {
   const [activeDropDown, setActiveDropDown] = useState(-1);
   const [selectedLink, setSelectedLink] = useState("/");
 
-  const toggleDropDown = (index) => {
+  const toggleDropDown = (index: number) => {
     setActiveDropDown((prevIndex) => (prevIndex === index ? -1 : index));
   };
 
-  const handleLinkClick = (link) => {
+  const handleLinkClick = (link: string) => {
     setSelectedLink(link);
     setOpen(false);
   };
 
   return (
-    <nav className="bg-bg-primary dark:bg-bg-light shadow-md fixed top-0 w-full z-50 transition-all duration-300  ">
+    <nav className="bg-bg-primary dark:bg-bg-light shadow-md fixed top-0 w-full z-50 transition-all duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <div className="flex items-center">
@@ -130,7 +130,7 @@ export default function Navbar() {
                 className="text-2xl font-extrabold text-text-primary dark:text-text-light tracking-tight"
               >
                 <Image
-                  src="/birra-group-4.jpg"
+                  src="/logo.jpg"
                   alt="Birra Group Logo"
                   width={90}
                   height={100}
@@ -155,12 +155,12 @@ export default function Navbar() {
                             <ChevronDown className="ml-1 w-3 h-3" />
                           </Button>
                         </HoverCardTrigger>
-                        <HoverCardContent className="w-48 bg-bg-secondary dark:bg-bg-accent2 border-bg-accent1 dark:border-bg-accent2 rounded-lg shadow-xl p-2">
+                        <HoverCardContent className="w-48 bg-bg-secondary border-bg-accent1 rounded-lg shadow-xl p-2">
                           {categories?.map((category) => (
                             <Link
                               key={category.id}
                               href={`/products/category/${category.id}`}
-                              className="flex items-center px-3 py-2 text-xs text-text-secondary dark:text-text-neutral hover:bg-bg-accent1 dark:hover:bg-bg-accent1 hover:text-text-primary dark:hover:text-text-light rounded-md transition-all duration-300"
+                              className="flex items-center px-3 py-2 text-xs text-text-secondary hover:bg-bg-accent1 hover:text-text-primary rounded-md transition-all duration-300"
                               onClick={() =>
                                 handleLinkClick(
                                   `/products/category/${category.id}`
@@ -231,7 +231,7 @@ export default function Navbar() {
                               )}
                             </div>
                             {activeDropDown === index && (
-                              <div className="pl-6 space-y-2 divide-y divide-bg-accent1 dark:divide-bg-accent2">
+                              <div className="pl-6 space-y-2 divide-y divide-bg-accent1">
                                 {categories?.map((category) => (
                                   <Link
                                     key={category.id}
@@ -241,7 +241,7 @@ export default function Navbar() {
                                         `/products/category/${category.id}`
                                       )
                                     }
-                                    className="block text-xs text-text-secondary dark:text-text-neutral hover:text-text-primary dark:hover:text-text-light pt-2"
+                                    className="block text-xs text-text-secondary hover:text-text-primary pt-2"
                                   >
                                     <div className="flex items-center">
                                       <Coffee className="w-4 h-4 mr-1" />
